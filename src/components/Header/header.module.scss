@@ -68,10 +68,12 @@
                 color: var(--white);
                 transition: .3s;
                 cursor: pointer;
+                border: 2px solid transparent;
 
                 &:hover {
                     color: var(--main);
                     background-color: var(--white);
+                    border-color: var(--main);
                 }
             }
         }

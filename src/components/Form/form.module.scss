@@ -200,6 +200,14 @@ form {
         font-weight: 700;
         line-height: normal;
         cursor: pointer;
+        transition: .4s;
+        border: 2px solid transparent;
+
+        &:hover {
+            background-color: var(--white);
+            color: var(--main);
+            border-color: var(--main);
+        }
     }
 }
 
