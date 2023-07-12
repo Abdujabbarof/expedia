@@ -1,0 +1,162 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4.5rem 3.3%;
+    z-index: 100;
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            display: none;
+        }
+        
+        label {
+            display: none;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .left {
+            width: 67.5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 3.5rem;
+                
+                .link {
+                    color: var(--grey);
+                    text-align: right;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                    transition: .3s;
+    
+                    &:hover {
+                        color: var(--white);
+                        text-shadow: 1px 0 0 var(--white);
+                    }
+                }
+    
+                .active {
+                    color: var(--white);
+                    text-shadow: 1px 0 0 var(--white);
+                }              
+            }
+    
+            .btn {
+                background-color: var(--main);
+                border: none;
+                outline: none;
+                padding: 1.5rem 5.1rem;
+                border-radius: 3.9rem;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                color: var(--white);
+                transition: .3s;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--main);
+                    background-color: var(--white);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        .container {
+            .left {
+                width: 73%;
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .header {
+        padding: 2.5rem 3.3%;
+
+        .container {
+            .left {
+                position: fixed;
+                width: 25rem;
+                height: 100vh;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                left: 0;
+                top: 0;
+                transform: translateX(-100%);
+                gap: 4rem;
+                background-color: var(--black);
+                transition: .3s ease;
+                z-index: 10;
+                opacity: 0;
+
+                .nav {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2rem;
+                }
+
+            }
+
+            .bars, .cover {
+                display: block;
+                font-size: 2.4rem;
+            }
+
+            .cover {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.50);
+                top: 0;
+                right: 0;
+                transform: translateX(100%);
+                transition: .3s ease;
+                opacity: 0;
+            }
+
+            .checkbox:checked ~ .left {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+
+            .checkbox:checked ~ .cover {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+
+            .checkbox:checked ~ .bars {
+                display: none;
+            }
+
+            .checkbox:checked ~ .xmark {
+                display: block;
+                z-index: 11;
+                position: fixed;
+                right: 3.3%;
+                top: 3rem;
+                font-size: 3rem;
+            }
+        }
+    }
+}

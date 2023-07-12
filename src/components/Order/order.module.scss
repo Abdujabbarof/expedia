@@ -1,0 +1,89 @@
+.order {
+    position: relative;
+    width: 100%;
+    padding: 0 3.3%;
+    background-color: var(--bg);
+
+    .container {
+        transform: translateY(-7rem);
+        padding: 0 4.4rem 2.4rem;
+        background-color: var(--white);
+        border-radius: 3rem;
+
+        .links {
+            width: 100%;
+            overflow-x: scroll;
+            border-bottom: 1px solid var(--gray);
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            ul {
+                min-width: 511px;
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 5rem;
+
+                li {
+                    .link {
+                        display: inline-block;
+                        padding: 2rem 0 .8rem;
+                        color: #888AA2;
+                        text-align: center;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        border-bottom: 2.5px solid transparent;
+                        transition: .4s;
+
+                        &:hover {
+                            color: var(--main);
+                            border-color: var(--main);
+                        }
+                    }
+
+                    .active {
+                        color: var(--main);
+                        border-color: var(--main);
+                    }
+                }
+            }
+        }
+
+        .notFound {
+            text-align: center;
+            font-size: 2rem;
+            padding: 4rem 0 2rem;
+            font-weight: 400;
+
+            span {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+@media (max-width: 661px) {
+    .order {
+        .container {
+            padding: 0 1.7rem 2.4rem;
+
+            .links {
+                ul {
+                    min-width: 435px;
+                    gap: 3rem;
+
+                    li {
+                        .link {
+                            padding: 1.7rem 0 .8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

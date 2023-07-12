@@ -1,0 +1,165 @@
+.footer {
+    padding: 4rem 3.3% 13.3rem;
+    background-color: var(--bg-footer);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 7.6rem;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            p{
+                max-width: 24.5rem;
+                width: 100%;
+                color: var(--white);
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.65px;
+                margin-top: 6.7rem;
+            }
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 5rem;
+
+            .links_wrap {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 1rem;
+
+                h3 {
+                    color: var(--white);
+                    text-align: start;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: 0.8px;
+                }
+
+                ul {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    li{
+                        a{
+                            color: var(--white);
+                            text-align: center;
+                            font-size: 1.4rem;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            letter-spacing: 0.7px;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+
+                .questions {
+                    color: var(--white);
+                    font-size: 1.4rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.7px;
+                }
+
+                nav {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 3rem;
+                    margin-top: 5rem;
+                    
+
+                    a {
+                        transition: .3s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        .container {
+            flex-direction: column;
+            gap: 4rem;
+
+            .left {
+                p {
+                    max-width: 35rem;
+                    margin-top: 3rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .footer {
+        .container {
+            .right {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                .links_wrap {
+                    width: 100%;
+
+                    &:last-child {
+                        grid-column: 2/4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 661px) {
+    .footer {
+        padding: 4rem 3.3% 7.3rem;
+        .container {
+            .right {
+                grid-template-columns: 1fr 1fr;
+
+                .links_wrap {
+                    width: 100%;
+
+                    .socials {
+                        margin-top: 3rem;
+                    }
+
+                    &:last-child {
+                        grid-column: 1/3;
+                    }
+                }
+            }
+        }
+    }
+}
